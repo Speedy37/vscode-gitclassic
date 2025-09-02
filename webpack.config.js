@@ -21,53 +21,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-class InlineChunkHtmlPlugin {
-	constructor(htmlPlugin, patterns) {
-		this.htmlPlugin = htmlPlugin;
-		this.patterns = patterns;
-	}
-
-	getInlinedTag(publicPath, assets, tag) {
-		if (
-			(tag.tagName !== 'script' || !(tag.attributes && tag.attributes.src)) &&
-			(tag.tagName !== 'link' || !(tag.attributes && tag.attributes.href))
-		) {
-			return tag;
-		}
-
-		let chunkName = tag.tagName === 'link' ? tag.attributes.href : tag.attributes.src;
-		if (publicPath) {
-			chunkName = chunkName.replace(publicPath, '');
-		}
-		if (!this.patterns.some(pattern => chunkName.match(pattern))) {
-			return tag;
-		}
-
-		const asset = assets[chunkName];
-		if (asset == null) {
-			return tag;
-		}
-
-		return { tagName: tag.tagName === 'link' ? 'style' : tag.tagName, innerHTML: asset.source(), closeTag: true };
-	}
-
-	apply(compiler) {
-		let publicPath = compiler.options.output.publicPath || '';
-		if (publicPath && !publicPath.endsWith('/')) {
-			publicPath += '/';
-		}
-
-		compiler.hooks.compilation.tap('InlineChunkHtmlPlugin', compilation => {
-			const getInlinedTagFn = tag => this.getInlinedTag(publicPath, compilation.assets, tag);
-
-			this.htmlPlugin.getHooks(compilation).alterAssetTagGroups.tap('InlineChunkHtmlPlugin', assets => {
-				assets.headTags = assets.headTags.map(getInlinedTagFn);
-				assets.bodyTags = assets.bodyTags.map(getInlinedTagFn);
-			});
-		});
-	}
-}
-
 module.exports =
 	/**
 	 * @param {{ analyzeBundle?: boolean; analyzeDeps?: boolean; esbuild?: boolean; } | undefined } env
@@ -294,7 +247,6 @@ function getWebviewsConfig(mode, env) {
 			chunks: ['rebase'],
 			filename: path.join(__dirname, 'dist', 'webviews', 'rebase.html'),
 			inject: true,
-			inlineSource: mode === 'production' ? '.css$' : undefined,
 			minify:
 				mode === 'production'
 					? {
@@ -314,7 +266,6 @@ function getWebviewsConfig(mode, env) {
 			chunks: ['settings'],
 			filename: path.join(__dirname, 'dist', 'webviews', 'settings.html'),
 			inject: true,
-			inlineSource: mode === 'production' ? '.css$' : undefined,
 			minify:
 				mode === 'production'
 					? {
@@ -334,7 +285,6 @@ function getWebviewsConfig(mode, env) {
 			chunks: ['welcome'],
 			filename: path.join(__dirname, 'dist', 'webviews', 'welcome.html'),
 			inject: true,
-			inlineSource: mode === 'production' ? '.css$' : undefined,
 			minify:
 				mode === 'production'
 					? {
@@ -350,7 +300,6 @@ function getWebviewsConfig(mode, env) {
 					: false,
 		}),
 		cspHtmlPlugin,
-		new InlineChunkHtmlPlugin(HtmlPlugin, mode === 'production' ? ['\\.css$'] : []),
 		new CopyPlugin({
 			patterns: [
 				{
