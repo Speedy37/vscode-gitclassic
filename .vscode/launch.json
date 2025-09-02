@@ -4,7 +4,7 @@
 	"configurations": [
 		{
 			"name": "Run GitLens",
-			"type": "pwa-extensionHost",
+			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
 			"args": ["--disable-extension=eamodio.gitlens-insiders", "--extensionDevelopmentPath=${workspaceFolder}"],
@@ -27,7 +27,7 @@
 		},
 		{
 			"name": "Run GitLens (Sandboxed)",
-			"type": "pwa-extensionHost",
+			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
 			"args": ["--disable-extensions", "--extensionDevelopmentPath=${workspaceFolder}"],
@@ -50,7 +50,7 @@
 		},
 		{
 			"name": "Watch & Launch GitLens",
-			"type": "pwa-extensionHost",
+			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
 			"args": ["--disable-extension=eamodio.gitlens-insiders", "--extensionDevelopmentPath=${workspaceFolder}"],
@@ -74,7 +74,7 @@
 		},
 		{
 			"name": "Watch & Launch GitLens (sandboxed)",
-			"type": "pwa-extensionHost",
+			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
 			"args": ["--disable-extensions", "--extensionDevelopmentPath=${workspaceFolder}"],
