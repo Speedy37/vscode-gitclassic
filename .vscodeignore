@@ -2,7 +2,6 @@
 .vscode/**
 .vscode-clean/**
 .yarn/**
-dist/webviews/*.css
 emoji/**
 images/docs/**
 images/originals/**
