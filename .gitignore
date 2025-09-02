@@ -3,5 +3,5 @@
 dist
 node_modules
 images/settings
-gitlens-*.vsix
+gitclassic-*.vsix
 tsconfig.tsbuildinfo

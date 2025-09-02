@@ -3948,7 +3948,7 @@ export class GitService implements Disposable {
 		return (
 			scheme === DocumentSchemes.File ||
 			scheme === DocumentSchemes.Git ||
-			scheme === DocumentSchemes.GitLens ||
+			scheme === DocumentSchemes.GitClassic ||
 			scheme === DocumentSchemes.PRs ||
 			scheme === DocumentSchemes.Vsls
 		);

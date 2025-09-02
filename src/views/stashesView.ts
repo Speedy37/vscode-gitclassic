@@ -118,7 +118,7 @@ export class StashesView extends ViewBase<StashesViewNode, StashesViewConfig> {
 	protected readonly configKey = 'stashes';
 
 	constructor() {
-		super('gitlens.views.stashes', 'Stashes');
+		super('gitclassic.views.stashes', 'Stashes');
 	}
 
 	getRoot() {
@@ -131,7 +131,7 @@ export class StashesView extends ViewBase<StashesViewNode, StashesViewConfig> {
 		return [
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(

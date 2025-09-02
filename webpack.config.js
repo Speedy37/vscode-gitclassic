@@ -88,7 +88,7 @@ function getExtensionConfig(mode, env) {
 		output: {
 			path: path.join(__dirname, 'dist'),
 			libraryTarget: 'commonjs2',
-			filename: 'gitlens.js',
+			filename: 'gitclassic.js',
 			chunkFilename: 'feature-[name].js',
 		},
 		optimization: {

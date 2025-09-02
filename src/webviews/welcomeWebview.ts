@@ -14,11 +14,11 @@ export class WelcomeWebview extends WebviewBase {
 	}
 
 	get id(): string {
-		return 'gitlens.welcome';
+		return 'gitclassic.welcome';
 	}
 
 	get title(): string {
-		return 'Welcome to GitLens';
+		return 'Welcome to GitClassic';
 	}
 
 	override renderEndOfBody() {

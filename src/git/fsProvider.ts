@@ -35,7 +35,7 @@ export class GitFileSystemProvider implements FileSystemProvider, Disposable {
 
 	constructor() {
 		this._disposable = Disposable.from(
-			workspace.registerFileSystemProvider(DocumentSchemes.GitLens, this, {
+			workspace.registerFileSystemProvider(DocumentSchemes.GitClassic, this, {
 				isCaseSensitive: true,
 				isReadonly: true,
 			}),

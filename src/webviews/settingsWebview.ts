@@ -79,11 +79,11 @@ export class SettingsWebview extends WebviewBase {
 	}
 
 	get id(): string {
-		return 'gitlens.settings';
+		return 'gitclassic.settings';
 	}
 
 	get title(): string {
-		return 'GitLens Settings';
+		return 'GitClassic Settings';
 	}
 
 	override renderEndOfBody() {

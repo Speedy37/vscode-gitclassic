@@ -43,28 +43,28 @@ export enum BuiltInGitConfiguration {
 }
 
 export enum ContextKeys {
-	ActionPrefix = 'gitlens:action:',
-	ActiveFileStatus = 'gitlens:activeFileStatus',
-	AnnotationStatus = 'gitlens:annotationStatus',
-	DisabledToggleCodeLens = 'gitlens:disabledToggleCodeLens',
-	Disabled = 'gitlens:disabled',
-	Enabled = 'gitlens:enabled',
-	HasConnectedRemotes = 'gitlens:hasConnectedRemotes',
-	HasRemotes = 'gitlens:hasRemotes',
-	HasRichRemotes = 'gitlens:hasRichRemotes',
-	Key = 'gitlens:key',
-	Readonly = 'gitlens:readonly',
-	ViewsCanCompare = 'gitlens:views:canCompare',
-	ViewsCanCompareFile = 'gitlens:views:canCompare:file',
-	ViewsCommitsMyCommitsOnly = 'gitlens:views:commits:myCommitsOnly',
-	ViewsFileHistoryCanPin = 'gitlens:views:fileHistory:canPin',
-	ViewsFileHistoryCursorFollowing = 'gitlens:views:fileHistory:cursorFollowing',
-	ViewsFileHistoryEditorFollowing = 'gitlens:views:fileHistory:editorFollowing',
-	ViewsLineHistoryEditorFollowing = 'gitlens:views:lineHistory:editorFollowing',
-	ViewsRepositoriesAutoRefresh = 'gitlens:views:repositories:autoRefresh',
-	ViewsSearchAndCompareKeepResults = 'gitlens:views:searchAndCompare:keepResults',
-	ViewsWelcomeVisible = 'gitlens:views:welcome:visible',
-	Vsls = 'gitlens:vsls',
+	ActionPrefix = 'gitclassic:action:',
+	ActiveFileStatus = 'gitclassic:activeFileStatus',
+	AnnotationStatus = 'gitclassic:annotationStatus',
+	DisabledToggleCodeLens = 'gitclassic:disabledToggleCodeLens',
+	Disabled = 'gitclassic:disabled',
+	Enabled = 'gitclassic:enabled',
+	HasConnectedRemotes = 'gitclassic:hasConnectedRemotes',
+	HasRemotes = 'gitclassic:hasRemotes',
+	HasRichRemotes = 'gitclassic:hasRichRemotes',
+	Key = 'gitclassic:key',
+	Readonly = 'gitclassic:readonly',
+	ViewsCanCompare = 'gitclassic:views:canCompare',
+	ViewsCanCompareFile = 'gitclassic:views:canCompare:file',
+	ViewsCommitsMyCommitsOnly = 'gitclassic:views:commits:myCommitsOnly',
+	ViewsFileHistoryCanPin = 'gitclassic:views:fileHistory:canPin',
+	ViewsFileHistoryCursorFollowing = 'gitclassic:views:fileHistory:cursorFollowing',
+	ViewsFileHistoryEditorFollowing = 'gitclassic:views:fileHistory:editorFollowing',
+	ViewsLineHistoryEditorFollowing = 'gitclassic:views:lineHistory:editorFollowing',
+	ViewsRepositoriesAutoRefresh = 'gitclassic:views:repositories:autoRefresh',
+	ViewsSearchAndCompareKeepResults = 'gitclassic:views:searchAndCompare:keepResults',
+	ViewsWelcomeVisible = 'gitclassic:views:welcome:visible',
+	Vsls = 'gitclassic:vsls',
 }
 
 export function setContext(key: ContextKeys | string, value: any) {
@@ -72,26 +72,26 @@ export function setContext(key: ContextKeys | string, value: any) {
 }
 
 export enum Colors {
-	GutterBackgroundColor = 'gitlens.gutterBackgroundColor',
-	GutterForegroundColor = 'gitlens.gutterForegroundColor',
-	GutterUncommittedForegroundColor = 'gitlens.gutterUncommittedForegroundColor',
-	TrailingLineBackgroundColor = 'gitlens.trailingLineBackgroundColor',
-	TrailingLineForegroundColor = 'gitlens.trailingLineForegroundColor',
-	LineHighlightBackgroundColor = 'gitlens.lineHighlightBackgroundColor',
-	LineHighlightOverviewRulerColor = 'gitlens.lineHighlightOverviewRulerColor',
-	ClosedPullRequestIconColor = 'gitlens.closedPullRequestIconColor',
-	OpenPullRequestIconColor = 'gitlens.openPullRequestIconColor',
-	MergedPullRequestIconColor = 'gitlens.mergedPullRequestIconColor',
-	UnpushlishedChangesIconColor = 'gitlens.unpushlishedChangesIconColor',
-	UnpublishedCommitIconColor = 'gitlens.unpublishedCommitIconColor',
-	UnpulledChangesIconColor = 'gitlens.unpulledChangesIconColor',
+	GutterBackgroundColor = 'gitclassic.gutterBackgroundColor',
+	GutterForegroundColor = 'gitclassic.gutterForegroundColor',
+	GutterUncommittedForegroundColor = 'gitclassic.gutterUncommittedForegroundColor',
+	TrailingLineBackgroundColor = 'gitclassic.trailingLineBackgroundColor',
+	TrailingLineForegroundColor = 'gitclassic.trailingLineForegroundColor',
+	LineHighlightBackgroundColor = 'gitclassic.lineHighlightBackgroundColor',
+	LineHighlightOverviewRulerColor = 'gitclassic.lineHighlightOverviewRulerColor',
+	ClosedPullRequestIconColor = 'gitclassic.closedPullRequestIconColor',
+	OpenPullRequestIconColor = 'gitclassic.openPullRequestIconColor',
+	MergedPullRequestIconColor = 'gitclassic.mergedPullRequestIconColor',
+	UnpushlishedChangesIconColor = 'gitclassic.unpushlishedChangesIconColor',
+	UnpublishedCommitIconColor = 'gitclassic.unpublishedCommitIconColor',
+	UnpulledChangesIconColor = 'gitclassic.unpulledChangesIconColor',
 }
 
 export enum DocumentSchemes {
 	DebugConsole = 'debug',
 	File = 'file',
 	Git = 'git',
-	GitLens = 'gitlens',
+	GitClassic = 'gitclassic',
 	Output = 'output',
 	PRs = 'pr',
 	Vsls = 'vsls',
@@ -166,17 +166,17 @@ export const enum GlyphChars {
 }
 
 export enum SyncedState {
-	Version = 'gitlens:synced:version',
-	WelcomeViewVisible = 'gitlens:views:welcome:visible',
+	Version = 'gitclassic:synced:version',
+	WelcomeViewVisible = 'gitclassic:views:welcome:visible',
 
-	Deprecated_DisallowConnectionPrefix = 'gitlens:disallow:connection:',
+	Deprecated_DisallowConnectionPrefix = 'gitclassic:disallow:connection:',
 }
 
 export enum GlobalState {
-	Avatars = 'gitlens:avatars',
-	PendingWelcomeOnFocus = 'gitlens:pendingWelcomeOnFocus',
-	PendingWhatsNewOnFocus = 'gitlens:pendingWhatsNewOnFocus',
-	Version = 'gitlens:version',
+	Avatars = 'gitclassic:avatars',
+	PendingWelcomeOnFocus = 'gitclassic:pendingWelcomeOnFocus',
+	PendingWhatsNewOnFocus = 'gitclassic:pendingWhatsNewOnFocus',
+	Version = 'gitclassic:version',
 
 	Deprecated_Version = 'gitlensVersion',
 }
@@ -248,16 +248,16 @@ export interface Usage {
 }
 
 export enum WorkspaceState {
-	BranchComparisons = 'gitlens:branch:comparisons',
-	ConnectedPrefix = 'gitlens:connected:',
-	DefaultRemote = 'gitlens:remote:default',
-	GitCommandPaletteUsage = 'gitlens:gitComandPalette:usage',
-	StarredBranches = 'gitlens:starred:branches',
-	StarredRepositories = 'gitlens:starred:repositories',
-	ViewsRepositoriesAutoRefresh = 'gitlens:views:repositories:autoRefresh',
-	ViewsSearchAndCompareKeepResults = 'gitlens:views:searchAndCompare:keepResults',
-	ViewsSearchAndComparePinnedItems = 'gitlens:views:searchAndCompare:pinned',
+	BranchComparisons = 'gitclassic:branch:comparisons',
+	ConnectedPrefix = 'gitclassic:connected:',
+	DefaultRemote = 'gitclassic:remote:default',
+	GitCommandPaletteUsage = 'gitclassic:gitComandPalette:usage',
+	StarredBranches = 'gitclassic:starred:branches',
+	StarredRepositories = 'gitclassic:starred:repositories',
+	ViewsRepositoriesAutoRefresh = 'gitclassic:views:repositories:autoRefresh',
+	ViewsSearchAndCompareKeepResults = 'gitclassic:views:searchAndCompare:keepResults',
+	ViewsSearchAndComparePinnedItems = 'gitclassic:views:searchAndCompare:pinned',
 
-	Deprecated_DisallowConnectionPrefix = 'gitlens:disallow:connection:',
-	Deprecated_PinnedComparisons = 'gitlens:pinned:comparisons',
+	Deprecated_DisallowConnectionPrefix = 'gitclassic:disallow:connection:',
+	Deprecated_PinnedComparisons = 'gitclassic:pinned:comparisons',
 }

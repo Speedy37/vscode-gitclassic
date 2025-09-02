@@ -59,7 +59,7 @@ export class Messages {
 		const disable = { title: 'Disable Debug Logging' };
 		const result = await Messages.showMessage(
 			'warn',
-			'GitLens debug logging is currently enabled. Unless you are reporting an issue, it is recommended to be disabled. Would you like to disable it?',
+			'GitClassic debug logging is currently enabled. Unless you are reporting an issue, it is recommended to be disabled. Would you like to disable it?',
 			SuppressedMessages.SuppressDebugLoggingWarning,
 			{ title: "Don't Show Again" },
 			disable,
@@ -95,7 +95,7 @@ export class Messages {
 	static showGitDisabledErrorMessage() {
 		return Messages.showMessage(
 			'error',
-			'GitLens requires Git to be enabled. Please re-enable Git \u2014 set `git.enabled` to true and reload.',
+			'GitClassic requires Git to be enabled. Please re-enable Git \u2014 set `git.enabled` to true and reload.',
 			SuppressedMessages.GitDisabledWarning,
 		);
 	}
@@ -103,14 +103,14 @@ export class Messages {
 	static showGitInvalidConfigErrorMessage() {
 		return Messages.showMessage(
 			'error',
-			'GitLens is unable to use Git. Your Git configuration seems to be invalid. Please resolve any issues with your Git configuration and reload.',
+			'GitClassic is unable to use Git. Your Git configuration seems to be invalid. Please resolve any issues with your Git configuration and reload.',
 		);
 	}
 
 	static showGitMissingErrorMessage() {
 		return Messages.showMessage(
 			'error',
-			"GitLens was unable to find Git. Please make sure Git is installed. Also ensure that Git is either in the PATH, or that 'git.path' is pointed to its installed location.",
+			"GitClassic was unable to find Git. Please make sure Git is installed. Also ensure that Git is either in the PATH, or that 'git.path' is pointed to its installed location.",
 			SuppressedMessages.GitMissingWarning,
 		);
 	}
@@ -118,7 +118,7 @@ export class Messages {
 	static showGitVersionUnsupportedErrorMessage(version: string, required: string): Promise<MessageItem | undefined> {
 		return Messages.showMessage(
 			'error',
-			`GitLens requires a newer version of Git (>= ${required}) than is currently installed (${version}). Please install a more recent version of Git.`,
+			`GitClassic requires a newer version of Git (>= ${required}) than is currently installed (${version}). Please install a more recent version of Git.`,
 			SuppressedMessages.GitVersionWarning,
 		);
 	}
@@ -134,7 +134,7 @@ export class Messages {
 	static showInsidersErrorMessage() {
 		return Messages.showMessage(
 			'error',
-			'GitLens (Insiders) cannot be used while GitLens is also enabled. Please ensure that only one version is enabled.',
+			'GitClassic (Insiders) cannot be used while GitClassic is also enabled. Please ensure that only one version is enabled.',
 			SuppressedMessages.GitDisabledWarning,
 		);
 	}
@@ -167,14 +167,14 @@ export class Messages {
 		const whatsnew = { title: "What's New" };
 		const result = await Messages.showMessage(
 			'info',
-			`GitLens has been updated to v${version} — check out what's new!`,
+			`GitClassic has been updated to v${version} — check out what's new!`,
 			undefined,
 			null,
 			whatsnew,
 		);
 
 		if (result === whatsnew) {
-			await env.openExternal(Uri.parse('https://gitlens.amod.io/#whats-new'));
+			await env.openExternal(Uri.parse('https://gitclassic.amod.io/#whats-new'));
 		}
 	}
 

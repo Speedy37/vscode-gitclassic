@@ -152,7 +152,7 @@ export class Keyboard implements Disposable {
 
 	constructor() {
 		const subscriptions = keys.map(key =>
-			commands.registerCommand(`gitlens.key.${key}`, () => this.execute(key), this),
+			commands.registerCommand(`gitclassic.key.${key}`, () => this.execute(key), this),
 		);
 		this._disposable = Disposable.from(...subscriptions);
 	}

@@ -67,15 +67,15 @@ export class StatusBarController implements Disposable {
 				this._statusBarMode =
 					this._statusBarMode ??
 					window.createStatusBarItem(
-						'gitlens.mode',
+						'gitclassic.mode',
 						alignment,
 						alignment === StatusBarAlignment.Right ? 999 : 1,
 					);
-				this._statusBarMode.name = 'GitLens Modes';
+				this._statusBarMode.name = 'GitClassic Modes';
 				this._statusBarMode.command = Commands.SwitchMode;
 				this._statusBarMode.text = mode.statusBarItemName;
 				this._statusBarMode.tooltip = new MarkdownString(
-					`**${mode.statusBarItemName}** ${GlyphChars.Dash} ${mode.description}\n\n---\n\nClick to Switch GitLens Mode`,
+					`**${mode.statusBarItemName}** ${GlyphChars.Dash} ${mode.description}\n\n---\n\nClick to Switch GitClassic Mode`,
 					true,
 				);
 				this._statusBarMode.show();
@@ -101,11 +101,11 @@ export class StatusBarController implements Disposable {
 			this._statusBarBlame =
 				this._statusBarBlame ??
 				window.createStatusBarItem(
-					'gitlens.blame',
+					'gitclassic.blame',
 					alignment,
 					alignment === StatusBarAlignment.Right ? 1000 : 0,
 				);
-			this._statusBarBlame.name = 'GitLens Current Line Blame';
+			this._statusBarBlame.name = 'GitClassic Current Line Blame';
 			this._statusBarBlame.command = Container.config.statusBar.command;
 
 			if (configuration.changed(e, 'statusBar.enabled')) {

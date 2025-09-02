@@ -125,7 +125,7 @@ export class TagsView extends ViewBase<TagsViewNode, TagsViewConfig> {
 	protected readonly configKey = 'tags';
 
 	constructor() {
-		super('gitlens.views.tags', 'Tags');
+		super('gitclassic.views.tags', 'Tags');
 	}
 
 	getRoot() {
@@ -138,7 +138,7 @@ export class TagsView extends ViewBase<TagsViewNode, TagsViewConfig> {
 		return [
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(

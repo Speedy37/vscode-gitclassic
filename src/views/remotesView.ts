@@ -137,7 +137,7 @@ export class RemotesView extends ViewBase<RemotesViewNode, RemotesViewConfig> {
 	protected readonly configKey = 'remotes';
 
 	constructor() {
-		super('gitlens.views.remotes', 'Remotes');
+		super('gitclassic.views.remotes', 'Remotes');
 	}
 
 	getRoot() {
@@ -150,7 +150,7 @@ export class RemotesView extends ViewBase<RemotesViewNode, RemotesViewConfig> {
 		return [
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(

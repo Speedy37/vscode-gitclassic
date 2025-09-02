@@ -52,7 +52,7 @@ export class GitUri extends (Uri as any as UriEx) {
 			return;
 		}
 
-		if (uri.scheme === DocumentSchemes.GitLens) {
+		if (uri.scheme === DocumentSchemes.GitClassic) {
 			const data = JSON.parse(uri.query) as UriRevisionData;
 
 			// Fixes issues with uri.query:
@@ -259,7 +259,7 @@ export class GitUri extends (Uri as any as UriEx) {
 
 		if (!Container.git.isTrackable(uri)) return new GitUri(uri);
 
-		if (uri.scheme === DocumentSchemes.GitLens) return new GitUri(uri);
+		if (uri.scheme === DocumentSchemes.GitClassic) return new GitUri(uri);
 
 		// If this is a git uri, find its repoPath
 		if (uri.scheme === DocumentSchemes.Git) {
@@ -499,7 +499,7 @@ export class GitUri extends (Uri as any as UriEx) {
 
 		const uri = Uri.parse(
 			// Replace / in the authority with a similar unicode characters otherwise parsing will be wrong
-			`${DocumentSchemes.GitLens}://${encodeURIComponent(shortSha.replace(/\//g, '\u200A\u2215\u200A'))}${
+			`${DocumentSchemes.GitClassic}://${encodeURIComponent(shortSha.replace(/\//g, '\u200A\u2215\u200A'))}${
 				// Change encoded / back to / otherwise uri parsing won't work properly
 				filePath === slash ? emptyStr : encodeURIComponent(filePath).replace(/%2F/g, slash)
 			}?${encodeURIComponent(JSON.stringify(data))}`,

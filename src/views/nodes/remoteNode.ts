@@ -145,7 +145,7 @@ export class RemoteNode extends ViewNode<RemotesView | RepositoriesView> {
 
 		if (this.remote.default) {
 			item.contextValue += '+default';
-			item.resourceUri = Uri.parse('gitlens-view://remote/default');
+			item.resourceUri = Uri.parse('gitclassic-view://remote/default');
 		}
 
 		for (const { type, url } of this.remote.urls) {

@@ -6,7 +6,7 @@ let _terminal: Terminal | undefined;
 let _terminalCwd: string | undefined;
 let _disposable: Disposable | undefined;
 
-const extensionTerminalName = 'GitLens';
+const extensionTerminalName = 'GitClassic';
 
 function ensureTerminal(cwd: string): Terminal {
 	if (_terminal === undefined) {

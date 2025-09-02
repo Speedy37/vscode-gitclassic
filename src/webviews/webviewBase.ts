@@ -197,7 +197,7 @@ export abstract class WebviewBase implements Disposable {
 					switch (params.type) {
 						case 'commit': {
 							const commit = new GitBlameCommit(
-								'~/code/eamodio/vscode-gitlens-demo',
+								'~/code/eamodio/vscode-gitclassic-demo',
 								'fe26af408293cba5b4bfd77306e1ac9ff7ccaef8',
 								'You',
 								'eamodio@gmail.com',
@@ -232,7 +232,7 @@ export abstract class WebviewBase implements Disposable {
 									},
 									'1',
 									'Supercharged',
-									'https://github.com/eamodio/vscode-gitlens/pulls/1',
+									'https://github.com/speedy37/vscode-gitclassic/pulls/1',
 									PullRequestState.Merged,
 									new Date('Sat, 12 Nov 2016 19:41:00 GMT'),
 									undefined,
@@ -301,7 +301,7 @@ export abstract class WebviewBase implements Disposable {
 				},
 			);
 
-			this._panel.iconPath = Uri.file(Container.context.asAbsolutePath('images/gitlens-icon.png'));
+			this._panel.iconPath = Uri.file(Container.context.asAbsolutePath('images/gitclassic-icon.png'));
 			this._disposablePanel = Disposable.from(
 				this._panel,
 				this._panel.onDidDispose(this.onPanelDisposed, this),

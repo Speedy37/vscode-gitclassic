@@ -45,7 +45,7 @@ export class VslsGuestService implements Disposable {
 
 		void setEnabled(false);
 		void window.showWarningMessage(
-			'GitLens features will be unavailable. Unable to connect to the host GitLens service. The host may have disabled GitLens guest access or may not have GitLens installed.',
+			'GitClassic features will be unavailable. Unable to connect to the host GitClassic service. The host may have disabled GitClassic guest access or may not have GitClassic installed.',
 		);
 	}
 

@@ -13,7 +13,7 @@ import {
 import { Config } from './config';
 import { Objects } from './system';
 
-const configPrefix = 'gitlens';
+const configPrefix = 'gitclassic';
 
 export interface ConfigurationWillChangeEvent {
 	change: ConfigurationChangeEvent;

@@ -143,7 +143,7 @@ export class BranchesView extends ViewBase<BranchesViewNode, BranchesViewConfig>
 	protected readonly configKey = 'branches';
 
 	constructor() {
-		super('gitlens.views.branches', 'Branches');
+		super('gitclassic.views.branches', 'Branches');
 	}
 
 	getRoot() {
@@ -156,7 +156,7 @@ export class BranchesView extends ViewBase<BranchesViewNode, BranchesViewConfig>
 		return [
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(

@@ -33,7 +33,7 @@
 			"query": "state:open repo:${owner}/${repository} sort:updated-desc"
 		}
 	],
-	"gitlens.advanced.blame.customArguments": ["--ignore-revs-file", ".gitignore-revs"],
+	"gitclassic.advanced.blame.customArguments": ["--ignore-revs-file", ".gitignore-revs"],
 	"npm.packageManager": "yarn",
 	"prettier.requireConfig": true,
 	"search.exclude": {

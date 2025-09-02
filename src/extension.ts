@@ -1,6 +1,6 @@
 'use strict';
 import { commands, ExtensionContext, extensions, window, workspace } from 'vscode';
-import type { CreatePullRequestActionContext, GitLensApi, OpenPullRequestActionContext } from '../src/api/gitlens';
+import type { CreatePullRequestActionContext, GitLensApi, OpenPullRequestActionContext } from '../src/api/gitclassic';
 import { Api } from './api/api';
 import { Commands, executeCommand, OpenPullRequestOnRemoteCommandArgs, registerCommands } from './commands';
 import { CreatePullRequestOnRemoteCommandArgs } from './commands/createPullRequestOnRemote';
@@ -24,11 +24,11 @@ export async function activate(context: ExtensionContext): Promise<GitLensApi | 
 
 	_context = context;
 
-	if (context.extension.id === 'eamodio.gitlens-insiders') {
+	if (context.extension.id === 'eamodio.gitclassic-insiders') {
 		// Ensure that stable isn't also installed
-		const stable = extensions.getExtension('eamodio.gitlens');
+		const stable = extensions.getExtension('eamodio.gitclassic');
 		if (stable != null) {
-			Logger.log('GitLens (Insiders) was NOT activated because GitLens is also enabled');
+			Logger.log('GitClassic (Insiders) was NOT activated because GitClassic is also enabled');
 
 			// If we don't use a setTimeout here this notification will get lost for some reason
 			setTimeout(() => void Messages.showInsidersErrorMessage(), 0);
@@ -85,7 +85,7 @@ export async function activate(context: ExtensionContext): Promise<GitLensApi | 
 
 	if (Logger.willLog('debug')) {
 		Logger.debug(
-			`GitLens (v${gitlensVersion}): syncedVersion=${syncedVersion}, localVersion=${localVersion}, previousVersion=${previousVersion}, ${
+			`GitClassic (v${gitlensVersion}): syncedVersion=${syncedVersion}, localVersion=${localVersion}, previousVersion=${previousVersion}, ${
 				SyncedState.WelcomeViewVisible
 			}=${context.globalState.get<boolean>(SyncedState.WelcomeViewVisible)}`,
 		);
@@ -103,7 +103,7 @@ export async function activate(context: ExtensionContext): Promise<GitLensApi | 
 
 	const enabled = workspace.getConfiguration('git', null).get<boolean>('enabled', true);
 	if (!enabled) {
-		Logger.log(`GitLens (v${gitlensVersion}) was NOT activated -- "git.enabled": false`);
+		Logger.log(`GitClassic (v${gitlensVersion}) was NOT activated -- "git.enabled": false`);
 		void setEnabled(false);
 
 		void Messages.showGitDisabledErrorMessage();
@@ -120,7 +120,7 @@ export async function activate(context: ExtensionContext): Promise<GitLensApi | 
 	try {
 		await GitService.initialize();
 	} catch (ex) {
-		Logger.error(ex, `GitLens (v${gitlensVersion}) activate`);
+		Logger.error(ex, `GitClassic (v${gitlensVersion}) activate`);
 		void setEnabled(false);
 
 		if (ex instanceof InvalidGitConfigError) {
@@ -166,7 +166,7 @@ export async function activate(context: ExtensionContext): Promise<GitLensApi | 
 	}
 
 	Logger.log(
-		`GitLens (v${gitlensVersion}${cfg.mode.active ? `, mode: ${cfg.mode.active}` : ''}) activated ${
+		`GitClassic (v${gitlensVersion}${cfg.mode.active ? `, mode: ${cfg.mode.active}` : ''}) activated ${
 			GlyphChars.Dot
 		} ${Strings.getDurationMilliseconds(start)} ms`,
 	);
@@ -241,7 +241,7 @@ function registerBuiltInActionRunners(context: ExtensionContext): void {
 
 async function showWelcomeOrWhatsNew(context: ExtensionContext, version: string, previousVersion: string | undefined) {
 	if (previousVersion == null) {
-		Logger.log(`GitLens first-time install; window.focused=${window.state.focused}`);
+		Logger.log(`GitClassic first-time install; window.focused=${window.state.focused}`);
 		if (Container.config.showWelcomeOnInstall === false) return;
 
 		if (window.state.focused) {
@@ -270,7 +270,7 @@ async function showWelcomeOrWhatsNew(context: ExtensionContext, version: string,
 	}
 
 	if (previousVersion !== version) {
-		Logger.log(`GitLens upgraded from v${previousVersion} to v${version}; window.focused=${window.state.focused}`);
+		Logger.log(`GitClassic upgraded from v${previousVersion} to v${version}; window.focused=${window.state.focused}`);
 	}
 
 	const [major, minor] = version.split('.').map(v => parseInt(v, 10));

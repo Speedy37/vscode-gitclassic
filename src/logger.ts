@@ -4,11 +4,11 @@ import { TraceLevel } from './configuration';
 import { getCorrelationContext, getNextCorrelationId } from './system';
 
 const emptyStr = '';
-const extensionOutputChannelName = 'GitLens';
-const ConsolePrefix = '[GitLens]';
+const extensionOutputChannelName = 'GitClassic';
+const ConsolePrefix = '[GitClassic]';
 
-const extensionGitOutputChannelName = 'GitLens (Git)';
-const GitConsolePrefix = '[GitLens (Git)]';
+const extensionGitOutputChannelName = 'GitClassic (Git)';
+const GitConsolePrefix = '[GitClassic (Git)]';
 
 export { TraceLevel } from './configuration';
 

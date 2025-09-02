@@ -5,7 +5,7 @@ import { configuration } from '../configuration';
 import { ContextKeys, setContext } from '../constants';
 import { Container } from '../container';
 import { getQuickPickIgnoreFocusOut } from '../quickpicks';
-import type { Action, ActionContext, ActionRunner } from './gitlens';
+import type { Action, ActionContext, ActionRunner } from './gitclassic';
 
 type Actions = ActionContext['type'];
 const actions: Actions[] = ['createPullRequest', 'openPullRequest', 'hover.commands'];

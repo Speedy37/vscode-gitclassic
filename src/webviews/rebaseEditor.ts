@@ -99,7 +99,7 @@ export class RebaseEditorProvider implements CustomTextEditorProvider, Disposabl
 
 	constructor() {
 		this._disposable = Disposable.from(
-			window.registerCustomEditorProvider('gitlens.rebase', this, {
+			window.registerCustomEditorProvider('gitclassic.rebase', this, {
 				supportsMultipleEditorsPerDocument: false,
 				webviewOptions: {
 					retainContextWhenHidden: true,
@@ -120,11 +120,11 @@ export class RebaseEditorProvider implements CustomTextEditorProvider, Disposabl
 
 		if (Array.isArray(associations)) {
 			const association = associations.find(a => a.filenamePattern === 'git-rebase-todo');
-			return association != null ? association.viewType === 'gitlens.rebase' : true;
+			return association != null ? association.viewType === 'gitclassic.rebase' : true;
 		}
 
 		const association = associations['git-rebase-todo'];
-		return association != null ? association === 'gitlens.rebase' : true;
+		return association != null ? association === 'gitclassic.rebase' : true;
 	}
 
 	private _disableAfterNextUse: boolean = false;
@@ -157,7 +157,7 @@ export class RebaseEditorProvider implements CustomTextEditorProvider, Disposabl
 				'git-rebase-todo': 'default',
 			};
 		} else {
-			associations['git-rebase-todo'] = enabled ? 'gitlens.rebase' : 'default';
+			associations['git-rebase-todo'] = enabled ? 'gitclassic.rebase' : 'default';
 		}
 
 		await configuration.updateAny('workbench.editorAssociations', associations, ConfigurationTarget.Global);

@@ -133,7 +133,7 @@ export class ContributorsView extends ViewBase<ContributorsViewNode, Contributor
 	protected readonly configKey = 'contributors';
 
 	constructor() {
-		super('gitlens.views.contributors', 'Contributors');
+		super('gitclassic.views.contributors', 'Contributors');
 	}
 
 	getRoot() {
@@ -146,7 +146,7 @@ export class ContributorsView extends ViewBase<ContributorsViewNode, Contributor
 		return [
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(

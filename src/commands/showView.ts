@@ -51,7 +51,7 @@ export class ShowViewCommand extends Command {
 			case Commands.ShowWelcomeView:
 				await setContext(ContextKeys.ViewsWelcomeVisible, true);
 				void Container.context.globalState.update(SyncedState.WelcomeViewVisible, true);
-				void (await commands.executeCommand('gitlens.views.welcome.focus'));
+				void (await commands.executeCommand('gitclassic.views.welcome.focus'));
 		}
 
 		return Promise.resolve(undefined);

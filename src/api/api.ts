@@ -3,7 +3,7 @@ import { Disposable } from 'vscode';
 import { Container } from '../container';
 import { Logger } from '../logger';
 import { builtInActionRunnerName } from './actionRunners';
-import type { Action, ActionContext, ActionRunner, GitLensApi } from './gitlens';
+import type { Action, ActionContext, ActionRunner, GitLensApi } from './gitclassic';
 
 const emptyDisposable = Object.freeze({
 	dispose: () => {
@@ -41,7 +41,7 @@ export function preview() {
 		descriptor.value = function (this: any, ...args: any[]) {
 			if (Container.insiders || Logger.isDebugging) return fn!.apply(this, args);
 
-			console.error('GitLens preview APIs are only available in the Insiders edition');
+			console.error('GitClassic preview APIs are only available in the Insiders edition');
 			return emptyDisposable;
 		};
 	};

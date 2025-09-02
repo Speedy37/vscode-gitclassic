@@ -50,7 +50,7 @@ export class RepositoriesView extends ViewBase<RepositoriesNode, RepositoriesVie
 	protected readonly configKey = 'repositories';
 
 	constructor() {
-		super('gitlens.views.repositories', 'Repositories');
+		super('gitclassic.views.repositories', 'Repositories');
 	}
 
 	private _onDidChangeAutoRefresh = new EventEmitter<void>();
@@ -68,7 +68,7 @@ export class RepositoriesView extends ViewBase<RepositoriesNode, RepositoriesVie
 		return [
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(

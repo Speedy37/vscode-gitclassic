@@ -3,16 +3,16 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Run GitLens",
+			"name": "Run GitClassic",
 			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
-			"args": ["--disable-extension=eamodio.gitlens-insiders", "--extensionDevelopmentPath=${workspaceFolder}"],
+			"args": ["--disable-extension=eamodio.gitclassic-insiders", "--extensionDevelopmentPath=${workspaceFolder}"],
 			"cwd": "${workspaceFolder}",
 			"debugWebviews": true,
 			"rendererDebugOptions": {
 				"sourceMaps": true,
-				"urlFilter": "*eamodio.gitlens*",
+				"urlFilter": "*eamodio.gitclassic*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -26,7 +26,7 @@
 			"trace": true
 		},
 		{
-			"name": "Run GitLens (Sandboxed)",
+			"name": "Run GitClassic (Sandboxed)",
 			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
@@ -35,7 +35,7 @@
 			"debugWebviews": true,
 			"rendererDebugOptions": {
 				"sourceMaps": true,
-				"urlFilter": "*eamodio.gitlens*",
+				"urlFilter": "*eamodio.gitclassic*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -49,16 +49,16 @@
 			"trace": true
 		},
 		{
-			"name": "Watch & Launch GitLens",
+			"name": "Watch & Launch GitClassic",
 			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
-			"args": ["--disable-extension=eamodio.gitlens-insiders", "--extensionDevelopmentPath=${workspaceFolder}"],
+			"args": ["--disable-extension=eamodio.gitclassic-insiders", "--extensionDevelopmentPath=${workspaceFolder}"],
 			"cwd": "${workspaceFolder}",
 			"debugWebviews": true,
 			"rendererDebugOptions": {
 				"sourceMaps": true,
-				"urlFilter": "*eamodio.gitlens*",
+				"urlFilter": "*eamodio.gitclassic*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
@@ -73,7 +73,7 @@
 			"trace": true
 		},
 		{
-			"name": "Watch & Launch GitLens (sandboxed)",
+			"name": "Watch & Launch GitClassic (sandboxed)",
 			"type": "extensionHost",
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
@@ -82,7 +82,7 @@
 			"debugWebviews": true,
 			"rendererDebugOptions": {
 				"sourceMaps": true,
-				"urlFilter": "*eamodio.gitlens*",
+				"urlFilter": "*eamodio.gitclassic*",
 				"webRoot": "${workspaceFolder}/src/webviews/apps"
 			},
 			"outFiles": ["${workspaceFolder}/dist/**/*.js"],

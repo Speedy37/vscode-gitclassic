@@ -12,7 +12,7 @@ export class LineHistoryView extends ViewBase<LineHistoryTrackerNode, LineHistor
 	protected readonly configKey = 'lineHistory';
 
 	constructor() {
-		super('gitlens.views.lineHistory', 'Line History');
+		super('gitclassic.views.lineHistory', 'Line History');
 
 		void setContext(ContextKeys.ViewsLineHistoryEditorFollowing, true);
 	}
@@ -31,7 +31,7 @@ export class LineHistoryView extends ViewBase<LineHistoryTrackerNode, LineHistor
 		return [
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(this.getQualifiedCommand('refresh'), () => this.refresh(true), this),

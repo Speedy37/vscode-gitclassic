@@ -206,7 +206,7 @@ export class CommitsView extends ViewBase<CommitsViewNode, CommitsViewConfig> {
 	protected readonly configKey = 'commits';
 
 	constructor() {
-		super('gitlens.views.commits', 'Commits');
+		super('gitclassic.views.commits', 'Commits');
 	}
 
 	private readonly _state: CommitsViewState = {};
@@ -224,7 +224,7 @@ export class CommitsView extends ViewBase<CommitsViewNode, CommitsViewConfig> {
 		return [
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(

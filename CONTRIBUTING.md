@@ -8,12 +8,12 @@ Please note the [Code of Conduct](CODE_OF_CONDUCT.md) document, please follow it
 
 ## Your First Code Contribution
 
-Unsure where to begin contributing? You can start by looking through the [`help-wanted`](https://github.com/Speedy37/vscode-gitlens-unbloated/labels/help-wanted) issues.
+Unsure where to begin contributing? You can start by looking through the [`help-wanted`](https://github.com/Speedy37/vscode-gitclassic/labels/help-wanted) issues.
 
 ### Getting the code
 
 ```
-git clone https://github.com/Speedy37/vscode-gitlens-unbloated.git
+git clone https://github.com/Speedy37/vscode-gitclassic.git
 ```
 
 Prerequisites
@@ -102,10 +102,6 @@ yarn run pack
 
 #### Using VS Code
 
-1. Open the `vscode-gitlens` folder
+1. Open the `vscode-gitclassic` folder
 2. Ensure the required [dependencies](#dependencies) are installed
-3. Choose the `Watch & Launch GitLens` launch configuration from the launch dropdown in the Run and Debug viewlet and press `F5`.
-
-## Submitting a Pull Request
-
-Please follow all the instructions in the [PR template](.github/PULL_REQUEST_TEMPLATE.md).
+3. Choose the `Watch & Launch GitClassic` launch configuration from the launch dropdown in the Run and Debug viewlet and press `F5`.

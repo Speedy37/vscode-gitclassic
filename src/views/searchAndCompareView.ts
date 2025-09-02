@@ -255,7 +255,7 @@ export class SearchAndCompareView extends ViewBase<SearchAndCompareViewNode, Sea
 	protected readonly configKey = 'searchAndCompare';
 
 	constructor() {
-		super('gitlens.views.searchAndCompare', 'Search & Compare');
+		super('gitclassic.views.searchAndCompare', 'Search & Compare');
 
 		void setContext(ContextKeys.ViewsSearchAndCompareKeepResults, this.keepResults);
 	}
@@ -271,7 +271,7 @@ export class SearchAndCompareView extends ViewBase<SearchAndCompareViewNode, Sea
 			commands.registerCommand(this.getQualifiedCommand('clear'), () => this.clear(), this),
 			commands.registerCommand(
 				this.getQualifiedCommand('copy'),
-				() => commands.executeCommand('gitlens.views.copy', this.selection),
+				() => commands.executeCommand('gitclassic.views.copy', this.selection),
 				this,
 			),
 			commands.registerCommand(this.getQualifiedCommand('refresh'), () => this.refresh(true), this),

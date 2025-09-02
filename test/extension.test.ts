@@ -20,7 +20,7 @@ suite('Extension Tests', () => {
 	});
 });
 
-// import { CreatePullRequestActionContext, OpenPullRequestActionContext } from '../src/api/gitlens';
+// import { CreatePullRequestActionContext, OpenPullRequestActionContext } from '../src/api/gitclassic';
 
 // api.registerActionRunner('openPullRequest', {
 // 	label: 'Test Runner',

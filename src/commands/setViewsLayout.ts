@@ -4,7 +4,7 @@ import { viewsConfigKeys } from '../configuration';
 import { command, Command, Commands } from './common';
 
 enum ViewsLayout {
-	GitLens = 'gitlens',
+	GitClassic = 'gitclassic',
 	SourceControl = 'scm',
 }
 
@@ -30,14 +30,14 @@ export class SetViewsLayoutCommand extends Command {
 						layout: ViewsLayout.SourceControl,
 					},
 					{
-						label: 'GitLens Layout',
+						label: 'GitClassic Layout',
 						description: '',
-						detail: 'Shows all the views together on the GitLens side bar',
-						layout: ViewsLayout.GitLens,
+						detail: 'Shows all the views together on the GitClassic side bar',
+						layout: ViewsLayout.GitClassic,
 					},
 				],
 				{
-					placeHolder: 'Choose a GitLens views layout',
+					placeHolder: 'Choose a GitClassic views layout',
 				},
 			);
 			if (pick == null) return;
@@ -46,14 +46,14 @@ export class SetViewsLayoutCommand extends Command {
 		}
 
 		switch (layout) {
-			case ViewsLayout.GitLens:
+			case ViewsLayout.GitClassic:
 				try {
 					// Because of https://github.com/microsoft/vscode/issues/105774, run the command twice which seems to fix things
 					let count = 0;
 					while (count++ < 2) {
 						void (await commands.executeCommand('vscode.moveViews', {
-							viewIds: viewsConfigKeys.map(view => `gitlens.views.${view}`),
-							destinationId: 'workbench.view.extension.gitlens',
+							viewIds: viewsConfigKeys.map(view => `gitclassic.views.${view}`),
+							destinationId: 'workbench.view.extension.gitclassic',
 						}));
 					}
 				} catch {}
@@ -65,13 +65,13 @@ export class SetViewsLayoutCommand extends Command {
 					let count = 0;
 					while (count++ < 2) {
 						void (await commands.executeCommand('vscode.moveViews', {
-							viewIds: viewsConfigKeys.map(view => `gitlens.views.${view}`),
+							viewIds: viewsConfigKeys.map(view => `gitclassic.views.${view}`),
 							destinationId: 'workbench.view.scm',
 						}));
 					}
 				} catch {
 					for (const view of viewsConfigKeys) {
-						void (await commands.executeCommand(`gitlens.views.${view}.resetViewLocation`));
+						void (await commands.executeCommand(`gitclassic.views.${view}.resetViewLocation`));
 					}
 				}
 

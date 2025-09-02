@@ -33,7 +33,7 @@ import { ContextValues, SubscribeableViewNode, ViewNode } from './viewNode';
 export class RepositoryNode extends SubscribeableViewNode<RepositoriesView> {
 	static key = ':repository';
 	static getId(repoPath: string): string {
-		return `gitlens${this.key}(${repoPath})`;
+		return `gitclassic${this.key}(${repoPath})`;
 	}
 
 	private _children: ViewNode[] | undefined;

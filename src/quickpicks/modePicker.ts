@@ -37,7 +37,7 @@ export namespace ModePicker {
 		}
 
 		const pick = await window.showQuickPick(items, {
-			placeHolder: 'select a GitLens mode to enter',
+			placeHolder: 'select a GitClassic mode to enter',
 		});
 
 		return pick;
